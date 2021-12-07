@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <raktar :rows="rows" @raktar-item-changed="Changed"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Raktar from './components/Raktar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Raktar
   },
   data() {
     return {
@@ -38,7 +37,18 @@ export default {
         },
       ]
     }
-  }
+  },
+  methods:{
+      Changed(e) {
+      this.rows.map(function (row) {
+        if (row.title != e.original.title) {
+          return row
+        }
+        row.title = e.new.title
+        return row
+      })
+    }
+    }
 }
 </script>
 
