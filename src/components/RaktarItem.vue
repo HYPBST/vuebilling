@@ -18,11 +18,15 @@
       <td v-if="!edit">
           {{quantity}}
       </td>
+      
       <td v-if="!edit">
           <button @click="Torles">Törlés</button> <button @click="Edit">Módósít</button>
       </td>
       <td v-if="edit">
           <button @click="Save">Mentés</button>
+      </td>
+      <td v-if="!edit">
+          {{quantity*price}}
       </td>
   </tr>
 </template>

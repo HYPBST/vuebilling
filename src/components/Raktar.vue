@@ -13,6 +13,9 @@
           <th>
               Operations
           </th>
+          <th>
+              Összérték
+          </th>
           <RaktarItem
           v-for="row in rows"
           v-bind:key="row.title"
