@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-post="Post"/>
+    <raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-post="Post" @raktar-item-torles="Torles"/>
   </div>
 </template>
 
 <script>
+//import Vue from 'vue'
 import Raktar from './components/Raktar.vue'
 
 export default {
@@ -50,7 +51,11 @@ export default {
     },
     Post(e){
       this.rows.push(e.new)
-    }
+    },
+    Torles(e){
+        
+          this.rows.splice(this.rows.indexOf(e.original), 1);
+        }
     }
 }
 </script>

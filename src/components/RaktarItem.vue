@@ -19,7 +19,7 @@
           {{quantity}}
       </td>
       <td v-if="!edit">
-          <button >Törlés</button> <button @click="Edit">Módósít</button>
+          <button @click="Torles">Törlés</button> <button @click="Edit">Módósít</button>
       </td>
       <td v-if="edit">
           <button @click="Save">Mentés</button>
@@ -51,6 +51,11 @@ export default {
                     price:this.price,
                     quantity:this.quantity
                     },
+            })
+        },
+        Torles(){
+            this.$emit('raktar-item-torles',{
+                original:this.row
             })
         }
     }

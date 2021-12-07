@@ -18,6 +18,7 @@
           v-bind:key="row.title"
           :row="row"
           @raktar-item-changed="Changed"
+          @raktar-item-torles="Torles"
           />
           <tr>
               <td>
@@ -57,6 +58,9 @@ export default {
             this.title="",
             this.price=null,
             this.quantity=null
+        },
+        Torles(e){
+            this.$emit('raktar-item-torles', e)
         }
     }
 
