@@ -20,6 +20,7 @@
 
 A főbb pontokon commitolj és pushold fel a változtatásokat. Ezt érdemes minél sűrűbben megtenni, hisz így adod majd be a feladatot.
 
+
 ## Hogyan fejezd be?
 
 Add be a repod linkjét. Figyelj oda, hogy az utolsó commit idejét fogjuk nézni.
