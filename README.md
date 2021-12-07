@@ -1,4 +1,4 @@
-# [Név]
+# Schmidt Gergő András
 
 ## Hogyan kezdj neki?
 
