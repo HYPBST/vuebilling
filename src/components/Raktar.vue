@@ -21,16 +21,16 @@
           />
           <tr>
               <td>
-                <input type="text" placeholder="Név">
+                <input type="text" v-model="title" placeholder="Név">
               </td>
               <td>
-                  <input type="number" placeholder="Ár">
+                  <input type="number" v-model="price" placeholder="Ár">
               </td>
               <td>
-                  <input type="number" placeholder="Darabszám">
+                  <input type="number" v-model="quantity" placeholder="Darabszám">
               </td>
               <td>
-                  <button> Hozzáad</button>
+                  <button @click="Post"> Hozzáad</button>
               </td>
           </tr>
       </table>
@@ -45,6 +45,18 @@ export default {
     methods: {
         Changed(e) {
             this.$emit('raktar-item-changed', e)
+        },
+        Post(){
+            this.$emit('raktar-item-post', {
+                new:{
+                    title:this.title,
+                    price:this.price,
+                    quantity:this.quantity
+                }
+            })
+            this.title="",
+            this.price=null,
+            this.quantity=null
         }
     }
 

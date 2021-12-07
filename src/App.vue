@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <raktar :rows="rows" @raktar-item-changed="Changed"/>
+    <raktar :rows="rows" @raktar-item-changed="Changed" @raktar-item-post="Post"/>
   </div>
 </template>
 
@@ -47,6 +47,9 @@ export default {
         row.title = e.new.title
         return row
       })
+    },
+    Post(e){
+      this.rows.push(e.new)
     }
     }
 }
